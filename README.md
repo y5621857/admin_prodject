@@ -33,4 +33,5 @@
     * Echart
     * UEditor
     * bootstrap
-    * bootstrap
+    * layer
+    * 删除线
