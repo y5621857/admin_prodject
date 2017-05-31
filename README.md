@@ -26,6 +26,7 @@
     * 图表
     * 小控件
     * 邮件
+    * 百度api
 
 * 运用
     * laravel
@@ -34,4 +35,3 @@
     * UEditor
     * bootstrap
     * layer
-    * 百度AIP
