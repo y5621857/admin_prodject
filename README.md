@@ -26,10 +26,15 @@
     * 图表
     * 小控件
     * 邮件
-   
+    * 时间控件
+    * 天气控件
+    
 * 运用
     * laravel
     * jquery
     * Echart
     * UEditor
     * bootstrap
+    * layer
+    * 百度地图
+    * 百度天气
