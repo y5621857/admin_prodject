@@ -35,6 +35,6 @@
     * Echart
     * UEditor
     * bootstrap
-    * layer
+    * layer
     * 百度地图
     * 百度天气
