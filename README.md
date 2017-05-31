@@ -33,4 +33,4 @@
     * Echart
     * UEditor
     * bootstrap
-    * layer
+    * bootstrap
