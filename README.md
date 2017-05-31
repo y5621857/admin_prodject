@@ -5,7 +5,7 @@
 这里只是对单个页面的书写，后期可以整合
 
 ****
-![](https://github.com/y5621857/admin_project/tree/master/public/img/happy.gif)
+![image](https://github.com/y5621857/admin_project/tree/master/public/img/happy.gif)
 
 
 
