@@ -25,7 +25,13 @@
     * 表格table
     * 图表
     * 小控件
-    * 邮件 
+    * baiduApi
+    * 表单编辑
+    * 正文
+    * 登录
+    * 表格table
+    * 图表
+    * 小控件
     * baiduApi
 
 
