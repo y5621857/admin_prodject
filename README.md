@@ -24,10 +24,16 @@
     * 登录
     * 表格table
     * 图表
-    * 小控件 百度天气、百度地图、时间
+    * 小控件
     * 邮件
 
 * 运用
+    * laravel
+    * jquery
+    * Echart
+    * UEditor
+    * bootstrap
+    * layer
     * laravel
     * jquery
     * Echart
