@@ -26,8 +26,8 @@
     * 图表
     * 小控件
     * 邮件
-    * laravel
-    * jquery
+    * 百度
+    * jquery
     * Echart
     * UEditor
     * bootstrap
