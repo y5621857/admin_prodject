@@ -26,12 +26,8 @@
     * 图表
     * 小控件
     * 邮件
-    * 百度
-    * jquery
-    * Echart
-    * UEditor
-    * bootstrap
-    * layer
+    * baiduApi
+
 
 * 运用
     * laravel
@@ -40,9 +36,4 @@
     * UEditor
     * bootstrap
     * layer
-    * laravel
-    * jquery
-    * Echart
-    * UEditor
-    * bootstrap
-    * layer
+
