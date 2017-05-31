@@ -1,0 +1,135 @@
+@include('head.header')
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<!-- TOP NAVBAR -->
+@include('templates.part.top_NavBar')
+
+<!-- SIDE MENU -->
+@include('templates.part.side_menu')
+
+<!-- RIGHT SLIDER CONTENT -->
+@include('templates.part.right_slider_content')
+
+<!--  PAPER WRAP -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+        <!-- BREADCRUMB -->
+        <div class="row">
+            <div id="paper-top">
+                <ul id="breadcrumb">
+                    <li><span class="entypo-home"></span></li>
+                    <li><i class="fa fa-lg fa-angle-right"></i>
+                    </li>
+                    <li><a href="{{url('index')}}" title="Sample page 1">主页</a>
+                    </li>
+                    <li><i class="fa fa-lg fa-angle-right"></i>
+                    </li>
+                    <li><a href="javascript:void(0)" title="Sample page 1">编辑</a>
+                    </li>
+                    <li class="pull-right hidden-xs">
+                        <div class="input-group input-widget">
+                            <input style="border-radius:15px;color: #000;" type="text" placeholder="查找..." class="form-control search_input">
+                            <a href="javascript:void (0)" class="entypo-search search_btn" style="position: absolute;right: 10px;top: 8px;font-size: 25px;"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-wrap">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="nest" id="elementClose">
+                        <div class="title-alt">
+                            <h6>修改</h6>
+                            <div class="titleClose">
+                                <a class="gone" href="#form_body">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                            <div class="titleToggle">
+                                <a class="nav-toggle-alt" href="#form_body">
+                                    <span class="entypo-up-open"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="body-nest" id="form_body">
+                            <div class="panel-body">
+                                <form class="form-horizontal bucket-form edit_form layui-form" action="" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">姓名</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="name" {{--lay-verify="required|name"--}} autocomplete="off" class="form-control" placeholder="参数...">
+                                            <span class="help-block">提示：<span>数据</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">联系方式</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="phone" {{--lay-verify="required|phone"--}} autocomplete="off" class="form-control" placeholder="参数...">
+                                            <span class="help-block">提示：<span>数据</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">邮箱</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="email" {{--lay-verify="email"--}} autocomplete="off" class="form-control" placeholder="参数...">
+                                            <span class="help-block">提示：<span>数据</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">日期</label>
+                                        <div class="input-append date form_datetime col-sm-6">
+                                            <input size="16" type="text" name="dateTime" value="" readonly class="form-control date_Time_input">
+                                            <span class="help-block">提示：<span>点击打开日期选择输入</span></span>
+                                            <span class="add-on add-on-icon"><i class="icon-th fontawesome-calendar"></i></span>
+                                            <span class="add-on add-on-remove"><i class="icon-remove fontawesome-remove"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">提示</label>
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static">数据</p>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item layui-form-text form-group">
+                                        <label class="col-sm-3 control-label">备注</label>
+                                        <div class="col-sm-6">
+                                            <textarea placeholder="请输入内容..." name="remark" autocomplete="off" class="layui-textarea"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-2">
+                                            <input id="file-1" type="file" multiple class="file">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-7" style="text-align: right">
+                                            <br>
+                                            <button class="btn btn-primary btn_16px" lay-submit="" lay-filter="form1">提交</button>
+                                            <button type="reset" class="btn btn-primary btn_16px">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  FOOT-NAV -->
+       @include('templates.part.footer_nav')
+    </div>
+</div>
+@include('foot.footer')
+<script src="http://api.map.baidu.com/api?v=2.0&ak=CznyYWs38gYInAANxUQubxZzEmIBpchQ"></script>
+<script src="{{url('ultron/js/front/localCity.js')}}"></script>
+<script src="{{url('ultron/js/front/form.js')}}"></script>
+

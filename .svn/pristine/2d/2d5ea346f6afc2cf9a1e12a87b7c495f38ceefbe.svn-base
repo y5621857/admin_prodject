@@ -1,0 +1,46 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="_token" content="<?php echo e(csrf_token()); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="工程管理系统">
+    <meta name="keywords" content="工程管理系统">
+    <meta name="author" content="">
+    <title>工程管理系统</title>
+    <!-- Le styles -->
+    <link rel="stylesheet" href="<?php echo e(url('css/style.css')); ?>">
+
+    <link rel="stylesheet" href="<?php echo e(url('css/extra-pages.css')); ?>">
+
+    <link rel="stylesheet" href="<?php echo e(url('js/wizard/css/jquery.steps.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(url('js/wizard/jquery.stepy.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(url('js/tabs/acc-wizard.min.css')); ?>">
+
+    <link rel="stylesheet" href="<?php echo e(url('ultron/ystep/css/ystep.css')); ?>">
+
+    <?php /*<link rel="stylesheet" href="<?php echo e(url('ultron/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css')); ?>">*/ ?>
+
+    <link rel="stylesheet" href="<?php echo e(url('css/extra-pages.css')); ?>">
+
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap-fileinput/4.3.9/css/fileinput.css">
+
+    <link rel="stylesheet" href="<?php echo e(url('ultron/layui/css/layui.css')); ?>">
+
+    <link rel="stylesheet" href="<?php echo e(url('css/loader-style.css')); ?>">
+
+
+    <link href="http://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+    <link href="<?php echo e(url('ultron/bootstrap/bootstrap-editable.css')); ?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo e(url('css/bootstrap.css')); ?>">
+
+    <link rel="stylesheet" href="<?php echo e(url('css/signin.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(url('js/progress-bar/number-pb.css')); ?>">
+
+    <link rel="stylesheet" href="<?php echo e(url('css/front/base.css')); ?>">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="<?php echo e(url('ico/minus.png')); ?>">

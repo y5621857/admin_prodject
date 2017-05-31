@@ -1,0 +1,453 @@
+<?php echo $__env->make('head.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</head>
+
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+
+<!-- TOP NAVBAR -->
+<?php echo $__env->make('templates.part.top_NavBar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<!-- SIDE MENU -->
+<?php echo $__env->make('templates.part.side_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<!--  PAPER WRAP -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+        <!-- CONTENT -->
+        <div class="row">
+            <!-- BREADCRUMB -->
+            <div id="paper-top">
+                <ul id="breadcrumb">
+                    <li><span class="entypo-home"></span></li>
+                    <li><i class="fa fa-lg fa-angle-right"></i>
+                    </li>
+                    <li><a href="<?php echo e(url('index')); ?>" title="Sample page 1">主页</a>
+                    </li>
+                    <li><i class="fa fa-lg fa-angle-right"></i>
+                    </li>
+                    <li><a href="" title="Sample page 1">主页</a>
+                    </li>
+                    <li class="pull-right hidden-xs">
+                        <div class="input-group input-widget">
+                            <input style="border-radius:15px;color: #000;" type="text" placeholder="查找..." class="form-control">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--  DEVICE MANAGER -->
+        <div class="content-wrap">
+            <div class="row">
+                <?php /*天气*/ ?>
+                <div class="col-lg-6">
+                    <div class="weather-wrap">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="temperature"><b id="Date1"></b></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="weather-icon">
+                                    <i class="wi-day-lightning"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="weather-text">
+                                    <h2>北京</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="weather-text">
+                                    <h3><i class="wi-thermometer"></i>18<i class="wi-celcius"></i>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weather-dash">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div class="daily-weather">
+                                        <h2>周一</h2>
+                                        <h3>85<span><i class="wi-fahrenheit"></i></span></h3>
+                                        <h4><i class="wi-day-lightning"></i></h4>
+                                        <h5>15<i>km/h</i></h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="daily-weather">
+                                        <h2>周二</h2>
+                                        <h3>81<span><i class="wi-fahrenheit"></i></span></h3>
+                                        <h4><i class="wi-day-cloudy"></i></h4>
+                                        <h5>12<i>km/h</i></h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="daily-weather">
+                                        <h2>周三</h2>
+                                        <h3>83<span><i class="wi-fahrenheit"></i></span></h3>
+                                        <h4><i class="wi-rain-mix"></i></h4>
+                                        <h5>14<i>km/h</i></h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="daily-weather">
+                                        <h2>周四</h2>
+                                        <h3>80<span><i class="wi-fahrenheit"></i></span></h3>
+                                        <h4><i class="wi-day-sunny"></i></h4>
+                                        <h5>15<i>km/h</i></h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="daily-weather">
+                                        <h2>周五</h2>
+                                        <h3>79<span><i class="wi-fahrenheit"></i></span></h3>
+                                        <h4><i class="wi-day-storm-showers"></i></h4>
+                                        <h5>11<i>km/h</i></h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="daily-weather">
+                                        <h2>周六</h2>
+                                        <h3>82<span><i class="wi-fahrenheit"></i></span></h3>
+                                        <h4><i class="wi-cloudy"></i></h4>
+                                        <h5>10<i>km/h</i></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="RealTimeClose" class="nest">
+                        <div class="title-alt">
+                            <h6>
+                                <span class="fontawesome-resize-horizontal"></span>&nbsp;Direction</h6>
+                            <div class="titleClose">
+                                <a class="gone" href="#RealTimeClose">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                            <div class="titleToggle">
+                                <a class="nav-toggle-alt" href="#RealTime">
+                                    <span class="entypo-up-open"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="RealTime" style="min-height:296px;padding-top:20px;" class="body-nest">
+                            <ul class="direction">
+                                <li>
+                                    <span class="direction-icon maki-fuel" style="background:#FF6B6B"></span>
+                                    <h3>
+                                        <span>数据</span>
+                                    </h3>
+                                    <p>姓名 &nbsp;&nbsp;<i class="fa fa-arrow-circle-up"></i>
+                                    </p>
+                                    <p><i>日期 </i>:&nbsp;<i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-05-05</p>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <span class="direction-icon maki-fast-food" style="background:#65C3DF"></span>
+                                    <h3>
+                                        <span>数据</span>
+                                    </h3>
+                                    <p>姓名 &nbsp;&nbsp;<i class="fa fa-reply"></i>
+                                    </p>
+                                    <p><i>日期 </i>:&nbsp;<i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-05-05</p>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <span class="direction-icon maki-giraffe" style="background:#45B6B0"></span>
+                                    <h3>
+                                        <span>数据</span>
+                                    </h3>
+                                    <p>姓名 &nbsp;&nbsp;<i class="fa fa-share"></i>
+                                    </p>
+                                    <p><i>日期 </i>:&nbsp;<i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-05-05</p>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <span class="direction-icon maki-giraffe" style="background:#45B6B0"></span>
+                                    <h3>
+                                        <span>数据</span>
+                                    </h3>
+                                    <p>姓名 &nbsp;&nbsp;<i class="fa fa-share"></i>
+                                    </p>
+                                    <p><i>日期 </i>:&nbsp;<i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-05-05</p>
+                                </li>
+                                <li class="divider"></li>
+                                <li style="text-align: center">
+                                    <a class="btn btn-block btn_more">查看更多...</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrap">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="revenue Margin_top" id="revenueClose">
+                        <div class="headline ">
+                            <h3>
+                                <span><i class="maki-aboveground-rail"></i>&#160;&#160;数据&nbsp;&nbsp;</span>
+                            </h3>
+                            <div class="titleClose">
+                                <a href="#revenueClose" class="gone">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <span class="pull-left"><i class="entypo-gauge gauge-position"></i></span>
+                            22
+                            <i class="pull-right">/条</i>
+                        </div>
+                        <div class="progress-tinny">
+                            <div style="width: 25%" class="bar"></div>
+                        </div>
+                        <div class="profit-line">
+                            <i class="fa fa-caret-down fa-lg"></i>&#160;&#160;信息</div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="revenue Margin_top" id="revenueClose">
+                        <div class="headline ">
+                            <h3>
+                                <span><i class="maki-aboveground-rail"></i>&#160;&#160;数据&nbsp;&nbsp;</span>
+                            </h3>
+                            <div class="titleClose">
+                                <a href="#revenueClose" class="gone">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <span class="pull-left"><i class="entypo-gauge gauge-position"></i></span>
+                            22
+                            <i class="pull-right">/条</i>
+                        </div>
+                        <div class="progress-tinny">
+                            <div style="width: 25%" class="bar"></div>
+                        </div>
+                        <div class="profit-line">
+                            <i class="fa fa-caret-down fa-lg"></i>&#160;&#160;信息</div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class=" member Margin_top" id="memberClose">
+                        <div class="headline ">
+                            <h3>
+                                <span><i class="fa fa-truck"></i>&#160;&#160;数据</span>
+                            </h3>
+                            <div class="titleClose">
+                                <a href="#memberClose" class="gone">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <span><i class="maki-warehouse"></i></span>45%
+                        </div>
+                        <div class="progress-tinny">
+                            <div style="width: 50%" class="bar"></div>
+                        </div>
+                        <div class="profit-line">
+                            <span class="entypo-down-circled"></span>&#160;信息</div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class=" member Margin_top" id="memberClose">
+                        <div class="headline ">
+                            <h3>
+                                <span><i class="fa fa-truck"></i>&#160;&#160;数据</span>
+                            </h3>
+                            <div class="titleClose">
+                                <a href="#memberClose" class="gone">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <span><i class="maki-warehouse"></i></span>45%
+                        </div>
+                        <div class="progress-tinny">
+                            <div style="width: 50%" class="bar"></div>
+                        </div>
+                        <div class="profit-line">
+                            <span class="entypo-down-circled"></span>&#160;信息</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrap">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div id="siteClose" class="nest">
+                        <div class="title-alt">
+                            <h6 style="font-size: 18px;font-weight: bold">
+                                <span class="fontawesome-truck"></span>&nbsp;数据</h6>
+                            <div class="titleClose">
+                                <a class="gone" href="#siteClose">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                            <div class="titleToggle">
+                                <a class="nav-toggle-alt" href="#site">
+                                    <span class="entypo-up-open"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="site" class="body-nest" style="min-height:296px;">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="armada-devider">
+                                            <div class="armada">
+                                                        <span style="background:#65C3DF">
+                                                            <span class="maki-bus"></span>&nbsp;&nbsp;Trans Berlin</span>
+                                                <p>
+                                                    <span class="entypo-gauge"></span>&nbsp;12 Km/<i>Hours</i>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="driver-devider">
+                                            <img class="armada-pic img-circle" alt="" src="http://api.randomuser.me/portraits/thumb/men/14.jpg">
+                                            <h3>Mark Zukenbeirg</h3>
+                                            <br>
+                                            <p>Driver</p>
+                                        </td>
+                                        <td class="progress-devider">
+                                            <section id="basic">
+                                                <article>
+                                                    <div class="number-pb">
+                                                        <div class="number-pb-shown"></div>
+                                                        <div class="number-pb-num">0</div>
+                                                    </div>
+                                                </article>
+                                            </section>
+                                            <span class="label pull-left">Berlin</span>
+                                            <span class="label pull-right">Muchen</span>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="armada-devider">
+                                            <div class="armada">
+                                                        <span style="background:#45B6B0">
+                                                            <span class="fontawesome-plane"></span>&nbsp;&nbsp;Fly Airlines</span>
+                                                <p>
+                                                    <span class="entypo-gauge"></span>&nbsp;600 Km/<i>Hours</i>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="driver-devider">
+                                            <img class="armada-pic img-circle" alt="" src="http://api.randomuser.me/portraits/thumb/men/38.jpg">
+                                            <h3>Marko Freytag</h3>
+                                            <br>
+                                            <p>Pilot</p>
+                                        </td>
+                                        <td class="progress-devider">
+                                            <section id="percentage">
+                                                <article>
+                                                    <div class="number-pb">
+                                                        <div class="number-pb-shown dream"></div>
+                                                        <div class="number-pb-num">0%</div>
+                                                    </div>
+                                                </article>
+                                            </section>
+
+
+                                            <span class="label pull-left">Berlin</span>
+                                            <span class="label pull-right">London</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="armada-devider">
+                                            <div class="armada">
+                                                        <span style="background:#FF6B6B">
+                                                            <span class="maki-aboveground-rail"></span>&nbsp;&nbsp;Fazttrain</span>
+                                                <p>
+                                                    <span class="entypo-gauge"></span>&nbsp;40 Km/<i>Hours</i>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="driver-devider">
+                                            <img class="armada-pic img-circle" alt="" src="http://api.randomuser.me/portraits/thumb/men/39.jpg">
+                                            <h3>Dieter Gruenewald</h3>
+                                            <br>
+                                            <p>machinist</p>
+                                        </td>
+                                        <td class="progress-devider">
+                                            <section id="step">
+                                                <article>
+                                                    <div class="number-pb">
+                                                        <div class="number-pb-shown sun"></div>
+                                                        <div class="number-pb-num">0/0</div>
+                                                    </div>
+                                                </article>
+                                            </section>
+
+                                            <span class="label pull-left">Berlin</span>
+                                            <span class="label pull-right">Dortmund</span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php echo $__env->make('templates.part.footer_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+</div>
+
+<!-- RIGHT SLIDER CONTENT -->
+<?php echo $__env->make('templates.part.right_slider_content', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<!-- FOOT -->
+<?php echo $__env->make('foot.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<script>
+    citytq = "郑州";
+    var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+    $.ajax({
+        url: url,
+        dataType: "script",
+        scriptCharset: "gbk",
+        success: function (data) {
+            var _w = window.SWther.w[citytq][0];
+            var _f = _w.f1 + "_0.png";
+            if (new Date().getHours() > 17) {
+                _f = _w.f2 + "_1.png";
+            }
+            var img = "<img width='16px' height='16px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" + _f
+                    + "' />";
+            var tq = "今日天气 :　" + citytq + " " + img + " " + _w.s1 + " " + _w.t1 + "℃～" + _w.t2 + "℃ " + _w.d1 + _w.p1 + "级";
+            console.log(tq)
+            console.log(_w)
+        }
+    });
+</script>
+
+
+

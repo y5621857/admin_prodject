@@ -1,0 +1,124 @@
+/**
+ * Created by ultron-soft on 2017/05/11.
+ */
+//UE_editor初始化
+var ue = UE.getEditor('UE_container' ,{
+    toolbars:[
+        [   'fullscreen', 'preview', 'print', '|', 'undo', 'redo', '|',
+            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', '|',
+            'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+            'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+            'directionalityltr', 'directionalityrtl', 'indent', '|',
+            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
+            'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+            'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'insertframe','insertcode', 'pagebreak', 'template', 'background', '|',
+            'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
+            'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
+            'searchreplace', 'drafts', 'cleardoc'
+        ]
+    ],
+    //关闭字数统计
+    wordCount:true,
+    //关闭elementPath
+    elementPathEnabled:false,
+    //默认的编辑区域高度
+    initialFrameHeight:400,
+    initialFrameWidth: "100%",
+    emotionLocalization:true,
+    maximumWords:"500",
+    autoFloatEnabled:false,
+    saveInterval:60000,
+    wordOverFlowMsg:'<span style="color:red;">你输入的字符个数已经超出最大允许值，服务器可能会拒绝保存 ！</span>'
+});
+
+
+//fileinput 初始化
+$("#file-1").fileinput({
+    language: 'zh',
+    uploadUrl: '#',
+    allowedFileExtensions : ['jpg', 'png','gif'],
+    overwriteInitial: false,
+    uploadAsync: false,
+    showUpload: false, //是否显示上传按钮
+    showCaption:true,
+    showPreview:true,
+    showRemove:true,
+    showCancel:false,
+    showClose:false,
+    showUploadedThumbs:false,
+    maxFileSize: 1000,
+    minFileCount: 1,
+    maxFileCount: 3
+});
+
+//上传文件数据
+var fileArray= [];
+
+/*删除文件*/
+$('#file-1').on('filebatchselected', function(event, files) {
+    //console.log(files);
+    fileArray = files ;
+});
+
+/*添加文件*/
+$('#file-1').on('filepreremove', function(event, id, index) {
+    //console.log("id="+id +"\n" + "index="+index +"\n");
+    fileArray.splice(index,1)
+});
+
+//表单控件
+layui.use(['form', 'laydate','layedit'], function(){
+    var form = layui.form()
+        ,layer = layui.layer
+        ,laydate = layui.laydate
+        ,layedit = layui.layedit
+        ,$ = layui.jquery,
+        $form=$('#form1');
+    //初始化城市三联
+    loadProvince(form,$form);
+
+
+    //构建一个默认的编辑器
+    var editIndex = layedit.build('LAY_demo1', {
+        tool: ['strong' ,'italic' ,'underline' ,'del' ,'|' ,'left' ,'center' ,'right' ,'|' ,'link' ,'unlink' ,'face' ]
+    });
+
+    //自定义验证规则
+    form.verify({
+        name: function(value){
+            if(value.length < 5){
+                return '账号至少得5个字符';
+            }
+        }
+        ,remark: function(value){
+            layedit.sync(editIndex);
+        }
+    });
+
+
+
+    //监听提交
+    form.on('submit(form1)', function(data){
+        var final_data=data.field;
+
+        //处理地区三级联动编码
+        console.log(final_data);
+        final_data.province=final_data.province.split('_')[0];
+        final_data.city=final_data.city.split('_')[0];
+        final_data.area=final_data.area.split('_')[0];
+
+        //获取图片资源
+        console.log(fileArray);
+
+        //获得UE编辑器内容
+        var UE_html = ue.getContent();
+
+        layer.alert(JSON.stringify(final_data), {
+            title: '最终的提交信息',
+            offset:['400px']
+        });
+
+        return false;
+    });
+
+});

@@ -1,0 +1,12 @@
+</body>
+</html>
+<script src="<?php echo e(url('js/jquery.js')); ?>"></script>
+<script src="http://cdn.bootcss.com/velocity/1.5.0/velocity.min.js"></script>
+<script src="http://cdn.bootcss.com/velocity/1.5.0/velocity.ui.min.js"></script>
+<script src="<?php echo e(url('ultron/layer/layer.js')); ?>"></script>
+<script src="<?php echo e(url('ultron/layui/layui.js')); ?>"></script>
+<script src="<?php echo e(url('js/preloader.js')); ?>"></script>
+<script src="<?php echo e(url('js/bootstrap.js')); ?>"></script>
+<script src="<?php echo e(url('js/app.js')); ?>"></script>
+<script src="<?php echo e(url('js/load.js')); ?>"></script>
+<script src="<?php echo e(url('js/main.js')); ?>"></script>

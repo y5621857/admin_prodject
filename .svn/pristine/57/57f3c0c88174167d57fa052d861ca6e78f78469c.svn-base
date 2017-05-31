@@ -1,0 +1,33 @@
+<?php echo $__env->make('head.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</head>
+
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+
+<!-- Main content -->
+<section class="page-error">
+    <div style="height: 200px;"></div>
+    <div class="error-page">
+        <h2 class="headline text-info">500</h2>
+        <div class="error-content">
+            <h3><i class="fa fa-warning text-yellow"></i> 哎哟! 服务器繁忙</h3>
+            <p>
+                服务器繁忙，请稍后再试。与此同时,你可以 <a href="javascript:history.back(-1)" class="error-link">点击直接返回</a>
+            </p>
+            <form class='search-form'>
+                <input type="text" name="search" class='form-control' placeholder="查找">
+            </form>
+            <span class="waitBox">5 秒后会自动跳转 ...</span>
+            <br>
+            <br>
+
+        </div>
+    </div>
+</section>
+<?php echo $__env->make('foot.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=CznyYWs38gYInAANxUQubxZzEmIBpchQ"></script>
+<script src="<?php echo e(url('ultron/js/front/localCity.js')); ?>"></script>
+<script src="<?php echo e(url('ultron/js/front/error.js')); ?>"></script>

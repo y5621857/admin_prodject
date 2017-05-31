@@ -1,0 +1,72 @@
+/**
+ * Created by ultron-soft on 2017/05/11.
+ */
+//dateTimePicker 初始化
+$(".form_datetime").datetimepicker({
+    language:  'zh-CN',
+    format: "dd MM yyyy - hh:ii",
+    showMeridian: true,
+    autoclose: true,
+    todayBtn: true,
+    startDate: "2017-05-20 10:00"
+});
+
+//fileinput 初始化
+$("#file-1").fileinput({
+    language: 'zh',
+    uploadUrl: '#',
+    allowedFileExtensions : ['jpg', 'png','gif'],
+    overwriteInitial: false,
+    uploadAsync: false,
+    showUpload: false, //是否显示上传按钮
+    showCaption:true,
+    showPreview:true,
+    showRemove:true,
+    showCancel:false,
+    showClose:false,
+    showUploadedThumbs:false,
+    maxFileSize: 1000,
+    minFileCount: 1,
+    maxFileCount: 3
+});
+
+//上传文件数据
+var fileArray= [];
+
+/*删除文件*/
+$('#file-1').on('filebatchselected', function(event, files) {
+    //console.log(files);
+    fileArray = files ;
+});
+
+/*添加文件*/
+$('#file-1').on('filepreremove', function(event, id, index) {
+    //console.log("id="+id +"\n" + "index="+index +"\n");
+    fileArray.splice(index,1)
+});
+
+//表单控件
+layui.use(['form', 'laydate'], function(){
+    var form = layui.form()
+        ,layer = layui.layer
+        ,laydate = layui.laydate;
+
+    //自定义验证规则
+    form.verify({
+        name: function(value){
+            if(value.length < 5){
+                return '账号至少得5个字符';
+            }
+        }
+    });
+
+    //监听提交
+    form.on('submit(form1)', function(data){
+        layer.alert(JSON.stringify(data.field), {
+            title: '最终的提交信息'
+        });
+        console.log(fileArray);
+        return false;
+    });
+
+});

@@ -1,0 +1,59 @@
+/**
+ * Created by ultron-soft on 2017/05/05.
+ */
+$(".p1_animate,.p2_animate,.h1_1_animate,.btn1_animate").hide();
+
+$("#login-wrapper").velocity("transition.flipBounceYIn", { duration: 650 });
+
+$(".h1_1_animate").velocity("transition.bounceRightIn", {
+    delay: 650,
+    duration: 650
+});
+
+$(".btn1_animate").velocity("transition.shrinkIn", {
+    delay: 1000,
+    duration: 1200
+}).velocity("callout.bounce", {
+    delay: 1800,
+    duration: 650
+});
+
+$(".p1_animate").velocity("transition.shrinkIn", {
+    delay: 1500,
+    duration: 1500
+});
+$(".p2_animate").velocity("transition.shrinkIn", {
+    delay: 2500,
+    duration: 1500
+});
+
+layui.use(['form', 'laydate'], function(){
+    var form = layui.form()
+        ,layer = layui.layer
+        ,laydate = layui.laydate;
+
+
+    //自定义验证规则
+    form.verify({
+        name: function(value){
+            if(value.length < 5){
+                return '账号至少得5个字符';
+            }
+        }
+        ,pass: [/^[\w]{6,12}$/, '密码必须6到12位数字、字母、下划线']
+    });
+
+    form.on('switch(switchTest)', function(data){
+        layer.tips('温馨提示：保存账号'+ ( this.checked ? '开启' : '关闭'), data.othis,{time:1500})
+    });
+
+    //监听提交
+    form.on('submit(demo2)', function(data){
+        layer.alert(JSON.stringify(data.field), {
+            title: '最终的提交信息',
+            offset:['400px']
+        });
+        return false;
+    });
+
+});

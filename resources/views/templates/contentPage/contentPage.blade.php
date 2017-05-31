@@ -1,0 +1,211 @@
+@include('head.header')
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<!-- TOP NAVBAR -->
+@include('templates.part.top_NavBar')
+
+<!-- SIDE MENU -->
+@include('templates.part.side_menu')
+
+<!-- RIGHT SLIDER CONTENT -->
+@include('templates.part.right_slider_content')
+
+<!--  PAPER WRAP -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+        <!-- BREADCRUMB -->
+        <div class="row">
+            <div id="paper-top">
+                <ul id="breadcrumb">
+                    <li><span class="entypo-home"></span></li>
+                    <li><i class="fa fa-lg fa-angle-right"></i>
+                    </li>
+                    <li><a href="{{url('index')}}" title="Sample page 1">主页</a>
+                    </li>
+                    <li><i class="fa fa-lg fa-angle-right"></i>
+                    </li>
+                    <li><a href="javascript:void(0)" title="Sample page 1">正文</a>
+                    </li>
+                    <li class="pull-right hidden-xs">
+                        <div class="input-group input-widget">
+                            <input style="border-radius:15px;color: #000;" type="text" placeholder="查找..." class="form-control search_input">
+                            <a href="javascript:void (0)" class="entypo-search search_btn" style="position: absolute;right: 10px;top: 8px;font-size: 25px;"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-wrap" id="contentPage">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="nest" id="Blank_PageClose">
+                        <div class="title-alt">
+                            <h6>文章</h6>
+                            <div class="titleClose">
+                                <a class="gone" href="#Blank_PageClose">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                            <div class="titleToggle">
+                                <a class="nav-toggle-alt" href="#Blank_Page_Content">
+                                    <span class="entypo-up-open"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="body-nest" id="Blank_Page_Content" >
+                            <p>
+                               文章详情
+                            </p>
+                            <br><br>
+                            {{--相关文档下载--}}
+                            <div class="panel panel-info">
+                                <div class="panel-heading"><i class="entypo-download"></i>&nbsp;&nbsp;<span>文件</span></div>
+                                <div class="panel-body">
+                                    <table class="table table-hover table-striped table-condensed fileTable">
+                                        <tbody>
+                                        <tr>
+                                            <td><a href="javascript:void(0)">1.文件<i class="entypo-download pull-right"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="javascript:void(0)">2.文件<i class="entypo-download pull-right"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="javascript:void(0)">3.文件<i class="entypo-download pull-right"></i></a></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <br><br>
+                            {{--图片文件--}}
+                            <div class="panel panel-info">
+                                <div class="panel-heading"><i class="fontawesome-picture"></i>&nbsp;&nbsp;<span>图片</span></div>
+                                <div class="panel-body">
+                                    <div class="pictures_box row" id="photos_light_box">
+                                        <div class="col-md-3 col-sm-6">
+                                            <a href="javascript:void(0)"><img layer-pid="" class="img-responsive" layer-src="{{url('img/pictures/picture1.jpg')}}" src="{{url('img/pictures/picture1.jpg')}}" alt="上传图片1"></a>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6">
+                                            <a href="javascript:void(0)"><img layer-pid="" class="img-responsive" layer-src="{{url('img/pictures/picture1.jpg')}}" src="{{url('img/pictures/picture1.jpg')}}" alt="上传图片2"></a>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6">
+                                            <a href="javascript:void(0)"><img layer-pid="" class="img-responsive" layer-src="{{url('img/pictures/picture1.jpg')}}" src="{{url('img/pictures/picture1.jpg')}}" alt="上传图片3"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                            {{--音频文件--}}
+                            <div class="panel panel-info">
+                                <div class="panel-heading"><i class="entypo-chat"></i>&nbsp;&nbsp;<span>语音</span></div>
+                                <div class="panel-body">
+                                    <div class="audio_box" style="overflow: auto; text-align: center">
+                                        <audio src="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" preload="auto"></audio>
+                                        <br>
+                                        <audio src="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" preload="auto"></audio>
+                                        <br>
+                                        <audio src="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" preload="auto"></audio>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                            {{--视频文件--}}
+                            <div class="panel panel-info">
+                                <div class="panel-heading"><i class="fontawesome-facetime-video"></i>&nbsp;&nbsp;<span>视频</span></div>
+                                <div class="panel-body">
+                                    <div class="video_box">
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-3 col-xs-6">
+                                                <a href="javascript:void(0)" class="video_img_btn1"><img src="{{url('img/video/video.jpg')}}" class="img-responsive" alt="'"></a>
+                                            </div>
+                                            <div class="col-md-2 col-sm-3 col-xs-6">
+                                                <a href="javascript:void(0)" class="video_img_btn2"><img src="{{url('img/video/video.jpg')}}" class="img-responsive" alt="'"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  FOOT-NAV -->
+       @include('templates.part.footer_nav')
+    </div>
+</div>
+@include('foot.footer')
+<script src="http://api.map.baidu.com/api?v=2.0&ak=CznyYWs38gYInAANxUQubxZzEmIBpchQ"></script>
+<script src="{{url('ultron/js/front/localCity.js')}}"></script>
+<script>
+    //初始化文件
+
+
+    //相片初始化
+    layer.photos({
+        photos: '#photos_light_box',
+        offset:'[400px]'
+    });
+
+    //audio初始化
+    audiojs.events.ready(function() {
+        audiojs.createAll();
+    });
+
+    //video初始化
+    var VideoWidth=['830px', '660px'];
+    var LayerOffset="[400px]";
+
+    function change_Video_Width(){
+        if($(window).width()<768){
+            VideoWidth=['380px', '460px']
+        }else if($(window).width()>=768){
+            VideoWidth=['830px', '660px'];
+        }
+    }
+
+    change_Video_Width();
+
+    $(window).resize(function(){
+        change_Video_Width();
+    });
+
+    $('.video_img_btn1').click(function(){
+        layer.open({
+            type: 2,
+            title: false,
+            offset:LayerOffset,
+            area: VideoWidth,
+            shade: 0.8,
+            closeBtn: 0,
+            shadeClose: true,
+            content: 'http://www.jsdlhk.com/mp4/new.mp4'
+        });
+        layer.msg('点击任意处关闭，视频右下角拖放可控制视屏大小',{
+            offset:LayerOffset
+        });
+    });
+
+    $('.video_img_btn2').click(function(){
+        layer.open({
+            type: 2,
+            title: false,
+            offset:LayerOffset,
+            area: VideoWidth,
+            shade: 0.8,
+            closeBtn: 0,
+            shadeClose: true,
+            content: '//player.youku.com/embed/XMjY3MzgzODg0'
+        });
+        layer.msg('点击任意处关闭，视频右下角拖放可控制视屏大小',{
+            offset:LayerOffset
+        });
+    });
+</script>

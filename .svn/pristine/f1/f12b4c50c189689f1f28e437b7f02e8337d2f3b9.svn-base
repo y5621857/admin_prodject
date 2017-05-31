@@ -1,0 +1,67 @@
+/**
+ * Created by ultron-soft on 2017/05/11.
+ */
+
+//初始化文件
+
+
+//相片初始化
+layer.photos({
+    photos: '#photos_light_box',
+    offset:'[400px]'
+});
+
+//audio初始化
+audiojs.events.ready(function() {
+    audiojs.createAll();
+});
+
+//video初始化
+var VideoWidth=['830px', '660px'];
+var LayerOffset="[400px]";
+
+function change_Video_Width(){
+    if($(window).width()<768){
+        VideoWidth=['380px', '460px']
+    }else if($(window).width()>=768){
+        VideoWidth=['830px', '660px'];
+    }
+}
+
+change_Video_Width();
+
+$(window).resize(function(){
+    change_Video_Width();
+});
+
+$('.video_img_btn1').click(function(){
+    layer.open({
+        type: 2,
+        title: false,
+        offset:LayerOffset,
+        area: VideoWidth,
+        shade: 0.8,
+        closeBtn: 0,
+        shadeClose: true,
+        content: 'http://www.jsdlhk.com/mp4/new.mp4'
+    });
+    layer.msg('点击任意处关闭，视频右下角拖放可控制视屏大小',{
+        offset:LayerOffset
+    });
+});
+
+$('.video_img_btn2').click(function(){
+    layer.open({
+        type: 2,
+        title: false,
+        offset:LayerOffset,
+        area: VideoWidth,
+        shade: 0.8,
+        closeBtn: 0,
+        shadeClose: true,
+        content: '//player.youku.com/embed/XMjY3MzgzODg0'
+    });
+    layer.msg('点击任意处关闭，视频右下角拖放可控制视屏大小',{
+        offset:LayerOffset
+    });
+});

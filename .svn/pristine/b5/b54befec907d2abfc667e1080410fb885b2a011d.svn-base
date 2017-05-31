@@ -1,0 +1,356 @@
+<div id="skin-select">
+    <div id="logo">
+        <h1>工程管理&nbsp;<span style="font-size: 16px">v 1. 0</span></h1>
+    </div>
+    <a id="toggle">
+        <span data-toggle="tooltip" data-placement="bottom" title="导航" class="entypo-menu tooltitle" style="font-size: 22px"></span>
+    </a>
+    <div class="dark">
+        <form>
+            <span>
+                <input type="text" name="search" value="" class="search rounded id_search" placeholder="请输入关键字..." autofocus="">
+            </span>
+        </form>
+    </div>
+    <div class="search-hover">
+        <form id="demo-2">
+            <input type="search" placeholder="请输入关键字..." class="id_search">
+        </form>
+    </div>
+    <?php /*LEFT-NAV*/ ?>
+    <div class="skin-part">
+        <div id="tree-wrap">
+            <div class="side-bar">
+                <?php /*总经理*/ ?>
+                <ul class="topnav menu-left-nest">
+                    <li>
+                        <a href="javascript:void(0)" style="border-left:0px solid!important;" class="title-menu-left">
+                            <span class="widget-menu"></span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip" href="#" title="Extra Pages">
+                            <i class="icon-document-new"></i>
+                            <span>菜单页</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Blank Page"><i class="icon-media-record"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Profile Page"><i class="icon-user"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Invoice"><i class="entypo-newspaper"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Pricing Table"><i class="fontawesome-money"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Time Line"><i class="entypo-clock"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="404 Error Page"><i class="icon-thumbs-down"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="500 Error Page"><i class="icon-thumbs-down"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="Lock Screen"><i class="icon-lock"></i><span>详情页</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip" href="#" title="UI Element">
+                            <i class="icon-monitor"></i>
+                            <span>菜单页</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Element"><i class="icon-attachment"></i><span>详情页</span></a>
+                            </li>
+                            <li><a class="tooltip-tip2 ajax-load" href="" title="Button"><i class="icon-view-list-large"></i><span>详情页</span> <div class="noft-blue-number">10</div></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Tab & Accordion"><i class="icon-folder"></i><span>详情页</span><div class="noft-purple-number">3</div></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Calender"><i class="icon-calendar"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Tree View"><i class="icon-view-list"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Grids"><i class="icon-menu"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Chart"><i class="icon-graph-pie"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip ajax-load" href="" title="Typhoghrapy"><i class="icon-information"></i><span>详情页</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="mail.html" title="Mail">
+                            <i class="icon-mail"></i>
+                            <span>消息</span>
+                            <div class="noft-blue">289</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="icon.html" title="Icons">
+                            <i class="icon-preview"></i>
+                            <span>消息</span>
+                            <div class="noft-blue" style="display: inline-block; float: none;">新</div>
+                        </a>
+                    </li>
+                </ul>
+
+                <?php /*项目经理*/ ?>
+                <ul class="topnav menu-left-nest">
+                    <li>
+                        <a href="javascript:void(0)" style="border-left:0px solid!important;" class="title-menu-left">
+                            <span class="design-kit"></span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip" href="#" title="Extra Pages">
+                            <i class="icon-document-new"></i>
+                            <span>菜单页</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Blank Page"><i class="icon-media-record"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Profile Page"><i class="icon-user"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Invoice"><i class="entypo-newspaper"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Pricing Table"><i class="fontawesome-money"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Time Line"><i class="entypo-clock"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="404 Error Page"><i class="icon-thumbs-down"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="500 Error Page"><i class="icon-thumbs-down"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="Lock Screen"><i class="icon-lock"></i><span>详情页</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip" href="#" title="UI Element">
+                            <i class="icon-monitor"></i>
+                            <span>菜单页</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Element"><i class="icon-attachment"></i><span>详情页</span></a>
+                            </li>
+                            <li><a class="tooltip-tip2 ajax-load" href="" title="Button"><i class="icon-view-list-large"></i><span>详情页</span> <div class="noft-blue-number">10</div></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Tab & Accordion"><i class="icon-folder"></i><span>详情页</span><div class="noft-purple-number">3</div></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Calender"><i class="icon-calendar"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Tree View"><i class="icon-view-list"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Grids"><i class="icon-menu"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Chart"><i class="icon-graph-pie"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip ajax-load" href="" title="Typhoghrapy"><i class="icon-information"></i><span>详情页</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <?php /*管理员*/ ?>
+                <ul id="menu-showhide" class="topnav menu-left-nest">
+                    <li>
+                        <a href="javascript:void(0)" style="border-left:0px solid!important;" class="title-menu-left">
+
+                            <span class="component"></span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip" href="#" title="Extra Pages">
+                            <i class="icon-document-new"></i>
+                            <span>菜单页</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Blank Page"><i class="icon-media-record"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Profile Page"><i class="icon-user"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Invoice"><i class="entypo-newspaper"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Pricing Table"><i class="fontawesome-money"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Time Line"><i class="entypo-clock"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="404 Error Page"><i class="icon-thumbs-down"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="500 Error Page"><i class="icon-thumbs-down"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="Lock Screen"><i class="icon-lock"></i><span>详情页</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip" href="#" title="UI Element">
+                            <i class="icon-monitor"></i>
+                            <span>菜单页</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Element"><i class="icon-attachment"></i><span>详情页</span></a>
+                            </li>
+                            <li><a class="tooltip-tip2 ajax-load" href="" title="Button"><i class="icon-view-list-large"></i><span>详情页</span> <div class="noft-blue-number">10</div></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Tab & Accordion"><i class="icon-folder"></i><span>详情页</span><div class="noft-purple-number">3</div></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Calender"><i class="icon-calendar"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Tree View"><i class="icon-view-list"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Grids"><i class="icon-menu"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Chart"><i class="icon-graph-pie"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip ajax-load" href="" title="Typhoghrapy"><i class="icon-information"></i><span>详情页</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <?php /*安全员*/ ?>
+                <ul id="menu-showhide" class="topnav menu-left-nest">
+                    <li>
+                        <a href="javascript:void(0)" style="border-left:0px solid!important;" class="title-menu-left">
+
+                            <span class="design-safe"></span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip" href="#" title="Extra Pages">
+                            <i class="icon-document-new"></i>
+                            <span>菜单页</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Blank Page"><i class="icon-media-record"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Profile Page"><i class="icon-user"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Invoice"><i class="entypo-newspaper"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Pricing Table"><i class="fontawesome-money"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Time Line"><i class="entypo-clock"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="404 Error Page"><i class="icon-thumbs-down"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="500 Error Page"><i class="icon-thumbs-down"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2" href="" title="Lock Screen"><i class="icon-lock"></i><span>详情页</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip" href="#" title="UI Element">
+                            <i class="icon-monitor"></i>
+                            <span>菜单页</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Element"><i class="icon-attachment"></i><span>详情页</span></a>
+                            </li>
+                            <li><a class="tooltip-tip2 ajax-load" href="" title="Button"><i class="icon-view-list-large"></i><span>详情页</span> <div class="noft-blue-number">10</div></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Tab & Accordion"><i class="icon-folder"></i><span>详情页</span><div class="noft-purple-number">3</div></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Calender"><i class="icon-calendar"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Tree View"><i class="icon-view-list"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Grids"><i class="icon-menu"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="" title="Chart"><i class="icon-graph-pie"></i><span>详情页</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip ajax-load" href="" title="Typhoghrapy"><i class="icon-information"></i><span>详情页</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="side-dash">
+                    <h3>
+                        <span>数据</span>
+                    </h3>
+                    <ul class="side-dashh-list">
+                        <li class="side_title">数据
+                                <span>25k<i style="color:#44BBC1;" class="fa fa-arrow-circle-up"></i>
+                                </span>
+                        </li>
+                        <li class="side_title">数据
+                                <span>80%<i style="color:#AB6DB0;" class="fa fa-arrow-circle-down"></i>
+                                </span>
+                        </li>
+                        <li class="side_title">数据
+                                <span>13m<i style="color:#19A1F9;" class="fa fa-arrow-circle-up"></i>
+                                </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+/**
+ * Created by ultron-soft on 2017/05/08.
+ */
+function myFun(result){
+
+    var cityName = result.name;
+    console.log("当前定位城市:"+cityName);
+    $("#localCtiy").text("当前定位城市:"+cityName);
+
+    var weather_city_box=$('#weather_city_box');
+    var weather_everyday=weather_city_box.find(".weather_everyday");
+    weather_everyday.remove();
+
+    $.ajax({
+        url:"http://api.map.baidu.com/telematics/v3/weather",
+        type:"get",
+        data:{
+            location:cityName,
+            output:'json',
+            ak:'6tYzTvGZSOpYB5Oc2YGGOKt8'
+        },
+        /*预期服务器端返回的数据类型，假设我现在跨域了，我就改成jsonp 就可以了 */
+        dataType:"jsonp",
+        success:function(data){
+            //console.log(data);
+            //百度那边的 数据已经回来，我现在要解析这个数据.
+
+            var weather_box=$("#weather_box");
+
+            var weatherImg_arr=['<i class="wi-day-cloudy"></i>','<i class="wi-fog"></i>','<i class="wi-rain"></i>','<i class="wi-snow"></i>'];
+
+            var weather_text=data.results[0].weather_data[0].weather;
+
+            function WeatherCheck(weather_text){
+                if(weather_text.indexOf("雪")!=-1 ){
+                    return "3";
+                }else if(weather_text.indexOf("雨")!=-1){
+                    return "2";
+                }else if(weather_text.indexOf("雾")!=-1){
+                    return "1";
+                } else{
+                    return "0";
+                }
+            }
+
+            var WeatherCheck=WeatherCheck(weather_text);
+
+            weather_box.find(".weather_img .weather-icon").append(weatherImg_arr[WeatherCheck]);
+
+            weather_box.find(".weather_city").html(data.results[0].currentCity + "&nbsp;&nbsp;<span>PM 2 . 5 : " + data.results[0].pm25 + "</span>" );
+
+            weather_box.find(".weather_city_text").html(weather_text);
+
+            weather_box.find(".weather_city_temperature").html(data.results[0].weather_data[0].temperature);
+
+
+
+            $.each(data.results[0].weather_data,function(i,v){
+                if(i==4){
+                    return false;
+                }
+                function WeatherCheck(weather_text){
+                    if(weather_text.indexOf("雪")!=-1 ){
+                        return "3";
+                    }else if(weather_text.indexOf("雨")!=-1){
+                        return "2";
+                    }else if(weather_text.indexOf("雾")!=-1){
+                        return "1";
+                    } else{
+                        return "0";
+                    }
+                }
+
+                //console.log(v);
+                var weather_everyday_clone=weather_everyday.clone();
+
+                weather_everyday_clone.find("h2").html(v.date.slice(0,2));
+
+                weather_everyday_clone.find("h3").html(v.temperature);
+
+                var WeatherCheck1=WeatherCheck(v.weather);
+                weather_everyday_clone.find("h4").html(weatherImg_arr[WeatherCheck1]);
+
+                weather_everyday_clone.find("h5").html(v.weather+"<br>"+v.wind);
+
+
+                weather_city_box.append(weather_everyday_clone);
+            })
+
+        }
+    })
+}
+var myCity = new BMap.LocalCity();
+myCity.get(myFun);
+
+
+$(".search_btn").click(function(){
+    var str = $(".search_input").val();
+    if($.trim(str)!=""){
+        layer.msg(str),{
+            offset:['400px']
+        };
+    }
+});
+

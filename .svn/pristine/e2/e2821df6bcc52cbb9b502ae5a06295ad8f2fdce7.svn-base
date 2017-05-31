@@ -1,0 +1,111 @@
+<?php echo $__env->make('head.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<!-- TOP NAVBAR -->
+<?php echo $__env->make('templates.part.top_NavBar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<!-- SIDE MENU -->
+<?php echo $__env->make('templates.part.side_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<!-- RIGHT SLIDER CONTENT -->
+<?php echo $__env->make('templates.part.right_slider_content', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<!--  PAPER WRAP -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+        <!-- BREADCRUMB -->
+        <div class="row">
+            <div id="paper-top">
+                <ul id="breadcrumb">
+                    <li><span class="entypo-home"></span></li>
+                    <li><i class="fa fa-lg fa-angle-right"></i>
+                    </li>
+                    <li><a href="<?php echo e(url('index')); ?>" title="Sample page 1">主页</a>
+                    </li>
+                    <li><i class="fa fa-lg fa-angle-right"></i>
+                    </li>
+                    <li><a href="javascript:void(0)" title="Sample page 1">编辑</a>
+                    </li>
+                    <li class="pull-right hidden-xs">
+                        <div class="input-group input-widget">
+                            <input style="border-radius:15px;color: #000;" type="text" placeholder="查找..." class="form-control search_input">
+                            <a href="javascript:void (0)" class="entypo-search search_btn" style="position: absolute;right: 10px;top: 8px;font-size: 25px;"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-wrap">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="nest" id="elementClose">
+                        <div class="title-alt">
+                            <h6>修改</h6>
+                            <div class="titleClose">
+                                <a class="gone" href="#body">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                            <div class="titleToggle">
+                                <a class="nav-toggle-alt" href="#form_body">
+                                    <span class="entypo-up-open"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="body-nest" id="form_body">
+                            <div class="panel-body">
+                                <form class="form-horizontal bucket-form edit_form layui-form" action="">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">参数</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="title" lay-verify="required|name" autocomplete="off" class="form-control" placeholder="参数...">
+                                            <span class="help-block">提示：<span>数据</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">不可编辑</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" disabled="" placeholder="参数..."  class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">提示</label>
+                                        <div class="col-sm-6">
+                                            <p class="form-control-static">数据</p>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item layui-form-text form-group">
+                                        <label class="col-sm-3 control-label">参数</label>
+                                        <div class="col-sm-6">
+                                            <textarea placeholder="请输入内容..." class="layui-textarea"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-6" style="text-align: right">
+                                            <button class="btn btn-primary btn_16px" lay-submit="" lay-filter="form1">提交</button>
+                                            <button type="reset" class="btn btn-primary btn_16px">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  FOOT-NAV -->
+       <?php echo $__env->make('templates.part.footer_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+</div>
+<?php echo $__env->make('foot.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=CznyYWs38gYInAANxUQubxZzEmIBpchQ"></script>
+<script src="<?php echo e(url('ultron/js/front/localCity.js')); ?>"></script>
+<script src="<?php echo e(url('ultron/js/front/edit.js')); ?>"></script>
