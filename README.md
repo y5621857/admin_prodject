@@ -26,6 +26,12 @@
     * 图表
     * 小控件
     * 邮件
+    * laravel
+    * jquery
+    * Echart
+    * UEditor
+    * bootstrap
+    * layer
 
 * 运用
     * laravel
