@@ -43,5 +43,8 @@ Route::get('/print', 'ViewController@printPage');  //打印轴页
 
 Route::get('/socket', 'ViewController@socket');  //打印轴页
 
+Route::get('/cropper', 'ViewController@cropper');  //图片剪裁页
+
+
 
 

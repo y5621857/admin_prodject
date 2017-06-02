@@ -492,3 +492,11 @@ span {
   margin-top: 0;
   margin-bottom: 0;
 }
+#cropper_container {
+  max-height: 500px;
+}
+@media (max-width: 768px) {
+  #cropper_container {
+    max-height: 250px;
+  }
+}
