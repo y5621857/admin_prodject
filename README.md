@@ -32,5 +32,10 @@
     * Echart
     * UEditor
     * bootstrap
-    * layer
+    * layer
+
+* 新增
+    * 动态验证码
+    * 流布局
+    * 排序
 
