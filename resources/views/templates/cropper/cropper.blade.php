@@ -143,12 +143,11 @@
 
                     example.attr({src:img_url});
                 }).on('cropmove', function (e) {
-                     var data_url = crop_img.cropper("getCroppedCanvas",{
-                     width: 100
-                     });
-                     var img_url = data_url.toDataURL("image/jpeg",0.3);
+                    var data_url = crop_img.cropper("getCroppedCanvas",{
+                        width: 100
+                    });
 
-                     example.attr({src:img_url});
+                    var img_url = data_url.toDataURL("image/jpeg",0.3);
                 });
             }else{
                 $("#file_input").val("");
@@ -188,13 +187,21 @@
             var img_Blob = data_url.toBlob(function(blob){
                 blob.name = imgName;
                 console.log(blob);
-                /*上传文件*/
+
+                /*上传文件，保存到本地*/
+                var save_link = $("<a></a>")[0];
+                save_link.href = img_url;
+                save_link.download = '截图';
+
+                save_link.click();
+                
             });
 
             console.log(img_url);
             console.log(imgName);
 
             example.attr({src:img_url});
+
         }else{
             layer.msg('请先选择一张图片',{icon:5},function(){
 
