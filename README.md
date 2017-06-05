@@ -26,6 +26,8 @@
     * 图表
     * baiduApi
 
+
+
 * 运用
     * laravel
     * jquery
@@ -34,6 +36,9 @@
     * bootstrap
     * layer
 
+
 * 新增
     * 动态验证码
     * 流布局排序
+
+
