@@ -1,4 +1,6 @@
 @include('head.header')
+<style type="text/css">
+</style>
 </head>
 <body>
 <!-- Preloader -->
@@ -43,6 +45,73 @@
         <!-- CONTENT -->
         <div class="content-wrap">
             <div class="row">
+                {{--下拉菜单--}}
+                <div class="col-sm-12">
+                    <div class="nest">
+                        <div class="title-alt">
+                            <h6>排序</h6>
+                            <div class="titleClose">
+                                <a class="gone" href="#flow_content4">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                            <div class="titleToggle">
+                                <a class="nav-toggle-alt" href="#flow_content4">
+                                    <span class="entypo-up-open"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="body-nest" id="flow_content4">
+                            <div id="filters" class="button-group">
+                                <button data-filter="*" class="btn btn-danger">show all</button>
+                                <button data-filter=".metal" class="btn btn-danger">metal</button>
+                                <button data-filter=".transition" class="btn btn-danger">transition</button>
+                                <button data-filter=".alkali, .alkaline-earth" class="btn btn-danger">alkali & alkaline-earth</button>
+                                <button data-filter=":not(.transition)" class="btn btn-danger">not transition</button>
+                                <button data-filter=".metal:not(.transition)" class="btn btn-danger">metal but not transition</button>
+                                <button data-sort="number" class="btn btn-danger">sort by number</button>
+                                <button data-sort="weight" class="btn btn-danger">sort by weight</button>
+                                <button data-layout="masonry" class="btn btn-success">layoutMode by masonry</button>
+                                <button data-layout="vertical" class="btn btn-success">layoutMode by vertical</button>
+                            </div>
+                            <div id="container">
+                                <div class="item transition metal col-md-3" data-category="metalloid"><img src="{{url('img/pictures/picture1.jpg')}}" alt="1" class="img-responsive"><h1 class="weight">99</h1><p class="number">6</p></div>
+                                <div class="item post-transition metal col-md-3" data-category="metalloid"><img src="{{url('img/pictures/picture1.jpg')}}" alt="2" class="img-responsive"><h1 class="weight">66</h1><p class="number">7</p></div>
+                                <div class="item alkali metal col-md-3" data-category="metalloid"><img src="{{url('img/pictures/picture1.jpg')}}" alt="3" class="img-responsive"><h1 class="weight">44</h1><p class="number">2</p></div>
+                                <div class="item transition metal col-md-3" data-category="metalloid"><img src="{{url('img/pictures/picture1.jpg')}}" alt="4" class="img-responsive"><h1 class="weight">11</h1><p class="number">4</p></div>
+                                <div class="item lanthanoid metal inner-transition col-md-3" data-category="metalloid"><img src="{{url('img/pictures/picture1.jpg')}}" alt="5" class="img-responsive"><h1 class="weight">55</h1><p class="number">5</p></div>
+                                <div class="item halogen nonmetal col-md-3" data-category="metalloid"><img src="{{url('img/pictures/picture1.jpg')}}" alt="6" class="img-responsive"><h1 class="weight">77</h1><p class="number">1</p></div>
+                                <div class="item alkaline-earth metal col-md-3" data-category="metalloid"><img src="{{url('img/pictures/picture1.jpg')}}" alt="7" class="img-responsive"><h1 class="weight">99</h1><p class="number">3</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{--打星--}}
+                <div class="col-sm-12">
+                    <div class="nest">
+                        <div class="title-alt">
+                            <h6>打分</h6>
+                            <div class="titleClose">
+                                <a class="gone" href="#flow_content0">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                            <div class="titleToggle">
+                                <a class="nav-toggle-alt" href="#flow_content0">
+                                    <span class="entypo-up-open"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="body-nest" id="flow_content0" >
+                            <div style="width:500px; margin:20px auto;">
+                                <div id="raty1" class="target-demo" data-id="myID1"></div>
+                                <div id="function-hint" class="hint"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {{--惰性加载--}}
                 <div class="col-sm-12">
                     <div class="nest">
@@ -202,6 +271,13 @@
 </script>
 
 <script>
+    $('#cd-dropdown').dropdown( {
+        gutter : 5,
+        delay : 100,
+        random : true
+    } );
+
+
     var lay_offset=['400px'];
 
     layui.use(['element', 'layer', 'flow', 'code', 'laytpl'], function(){
@@ -274,5 +350,71 @@
         });
 
     });
+
+    /*打分*/
+    $('#raty1').raty({
+        number: 5, //多少个星星设置
+        score:2.5, //初始值是设置
+        targetType: 'hint', //类型选择，number是数字值，hint，是设置的数组值
+        path: 'img/raty',
+        hints: ['差', '一般', '好', '非常好', '满分'],
+        cancelOff: 'cancel-off.png',
+        cancelOn: 'cancel-on.png',
+        size: 24,
+        starHalf: 'star-half.png',
+        starOff: 'star-off.png',
+        starOn: 'star-on.png',
+        target: '#function-hint',
+        cancel: false,
+        targetKeep: true,
+        targetText: '请选择评分',
+        precision: false, //是否包含小数
+        click: function(score, evt) {
+            alert('ID: ' + $(this).data('id') + "\nscore: " + score + "\nevent: " + evt.type);
+            //console.log(score);
+            //console.log(evt);
+        }
+    }).find("img").css({width:"18px"});
+
+    setTimeout(function(){
+        // init Isotope
+        var $container = $('#container').isotope({
+            getSortData: {
+                name: '.name', // text from querySelector
+                number: '.number parseInt',
+                category: '[data-category]', // value of attribute
+                weight: function( itemElem ) { // function
+                    var weight = $( itemElem ).find('.weight').text();
+                    return parseFloat( weight.replace( /[\(\)]/g, '') );
+                }
+            }
+        });
+// filter items on button click
+        $('#filters').on( 'click', 'button', function() {
+            var filterValue = $(this).data('filter');
+            if(filterValue){
+                console.log(filterValue);
+                $container.isotope({ filter : filterValue });
+            }
+
+
+            var SortValue = $(this).data('sort');
+            if(SortValue){
+                console.log(SortValue);
+                $container.isotope({
+                    sortBy : SortValue
+                });
+            }
+
+            var layoutModeValue = $(this).data("layout");
+            if(layoutModeValue){
+                console.log(layoutModeValue);
+                $container.isotope({
+                    layoutMode: layoutModeValue
+                });
+            }
+        });
+    },1000)
 </script>
+
 

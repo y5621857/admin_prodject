@@ -31,6 +31,10 @@
                             <label for="inputPassword">密码</label>
                             <input type="password" class="layui-input form-control" name="password" lay-verify="pass"  autocomplete="off" placeholder="请输入密码...">
                         </div>
+                        <div class="form-group">
+                            <label for="inputPassword" style="display: block;width: 100%;">验证码<span id="v_code" class="pull-right" style="margin-bottom: 10px"></span></label>
+                            <input type="password" class="layui-input form-control" name="code" lay-verify="required" autocomplete="off" placeholder="请输入验证码...">
+                        </div>
                         <div class="layui-form-item" pane="" style="width: 200px;display: inline-block;padding-top: 12px;" >
                             <input type="checkbox" name="remrember" lay-skin="switch" lay-filter="switchTest" lay-text="开 | &nbsp;&nbsp;&nbsp;&nbsp;关">
                             <label>记住密码</label>
@@ -54,6 +58,13 @@
 </div>
 @include('foot.footer')
 <script>
+    /*验证码*/
+    var verifyCode = new GVerify({
+        id:"v_code",
+        type:"number"
+    });
+
+
     $(".p1_animate,.p2_animate,.h1_1_animate,.btn1_animate").hide();
 
     $("#login-wrapper").velocity("transition.flipBounceYIn", { duration: 650 });
@@ -102,10 +113,18 @@
 
         //监听提交
         form.on('submit(demo2)', function(data){
-            layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息',
-                offset:['400px']
-            });
+            var code_verify =  verifyCode.validate($("input[name='code']").val());
+            //alert(code_verify);
+
+            if(code_verify){
+                layer.alert(JSON.stringify(data.field), {
+                    title: '最终的提交信息',
+                    offset:['400px']
+                });
+            }else{
+                $("input[name='code']").val("");
+            }
+
             return false;
         });
 

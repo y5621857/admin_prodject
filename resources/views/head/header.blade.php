@@ -17,8 +17,6 @@
 
     <link rel="stylesheet" href="{{url('ultron/ystep/css/ystep.css')}}">
 
-    {{--<link rel="stylesheet" href="{{url('ultron/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css')}}">--}}
-
     <link rel="stylesheet" href="{{url('css/extra-pages.css')}}">
 
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap-fileinput/4.3.9/css/fileinput.css">
@@ -34,6 +32,7 @@
 
     <link rel="stylesheet" href="{{url('css/signin.css')}}">
     <link rel="stylesheet" href="{{url('js/progress-bar/number-pb.css')}}">
+
 
     <link rel="stylesheet" href="{{url('css/front/base.css')}}">
 

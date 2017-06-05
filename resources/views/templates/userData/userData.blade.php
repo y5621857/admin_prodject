@@ -58,23 +58,9 @@
                                         <span class="pull-left">
                                             <strong>评分</strong>
                                         </span>
-                                    <div class="ratings">
-
-                                        <a href="javascript:void(0)">
-                                            <span class="fa fa-star"></span>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <span class="fa fa-star"></span>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <span class="fa fa-star"></span>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <span class="fa fa-star"></span>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <span class="fa fa-star-o"></span>
-                                        </a>
+                                    <div>
+                                        <div id="raty1" class="target-demo" data-id="myID1"></div>
+                                        <div id="function-hint" class="hint"></div>
                                     </div>
                                 </li>
                                 <li class="list-group-item text-right">
@@ -219,5 +205,29 @@
 <script src="http://api.map.baidu.com/api?v=2.0&ak=CznyYWs38gYInAANxUQubxZzEmIBpchQ"></script>
 <script src="{{url('ultron/js/front/localCity.js')}}"></script>
 <script>
+    /*打分*/
+    $('#raty1').raty({
+        number: 5, //多少个星星设置
+        score:2.5, //初始值是设置
+        targetType: 'hint', //类型选择，number是数字值，hint，是设置的数组值
+        path: 'img/raty',
+        hints: ['差', '一般', '好', '非常好', '满分'],
+        cancelOff: 'cancel-off.png',
+        cancelOn: 'cancel-on.png',
+        starHalf: 'star-half.png',
+        starOff: 'star-off.png',
+        starOn: 'star-on.png',
+        target: '#function-hint',
+        cancel: false,
+        targetKeep: false,
+        targetText: '请选择打分',
+        precision: false, //是否包含小数
+        click: function(score, evt) {
+            alert('ID: ' + $(this).data('id') + "\nscore: " + score + "\nevent: " + evt.type);
+            //console.log(score);
+            //console.log(evt);
+        }
+    }).find("img").css({width:"18px"});
+
     console.log("userData");
 </script>

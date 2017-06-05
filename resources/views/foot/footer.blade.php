@@ -35,6 +35,12 @@
 
 <script src="{{url('ultron/Echart/echarts.min.js')}}"></script>
 
+<script src="{{url('ultron/gVerify/gVerify.js')}}"></script>
+
+<script src="http://cdn.bootcss.com/raty/2.7.1/jquery.raty.min.js"></script>
+
+<script src="http://cdn.bootcss.com/jquery.isotope/3.0.4/isotope.pkgd.min.js"></script>
+
 <script src="{{url('js/app.js')}}"></script>
 <script src="{{url('js/load.js')}}"></script>
 <script src="{{url('js/main.js')}}"></script>
