@@ -37,6 +37,8 @@
 
 <script src="{{url('ultron/gVerify/gVerify.js')}}"></script>
 
+<script src="http://cdn.bootcss.com/Sortable/1.5.1/Sortable.js"></script>
+
 <script src="http://cdn.bootcss.com/raty/2.7.1/jquery.raty.min.js"></script>
 
 <script src="http://cdn.bootcss.com/jquery.isotope/3.0.4/isotope.pkgd.min.js"></script>

@@ -26,11 +26,24 @@
     * 图表
     * baiduApi
 
+
+
 * 运用
     * laravel
     * jquery
     * Echart
     * UEditor
     * bootstrap
-    * layer
+    * layer
+
+新增
+------
+2017/06/05
+##### 动态验证码
+##### 流布局排序
+
+------
+2017/06/05
+##### 拖拽排序
+
 

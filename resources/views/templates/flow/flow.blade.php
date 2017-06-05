@@ -30,7 +30,7 @@
                     </li>
                     <li><i class="fa fa-lg fa-angle-right"></i>
                     </li>
-                    <li><a href="javascript:void(0)" title="Sample page 1">惰性加载</a>
+                    <li><a href="javascript:void(0)" title="Sample page 1">辅助工具</a>
                     </li>
                     <li class="pull-right hidden-xs">
                         <div class="input-group input-widget">
@@ -45,11 +45,63 @@
         <!-- CONTENT -->
         <div class="content-wrap">
             <div class="row">
-                {{--下拉菜单--}}
+
+                {{--拖拽--}}
                 <div class="col-sm-12">
                     <div class="nest">
                         <div class="title-alt">
-                            <h6>排序</h6>
+                            <h6 id="example_id" data-id="1">拖拽排序</h6>
+                            <div class="titleClose">
+                                <a class="gone" href="#flow_content5">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                            <div class="titleToggle">
+                                <a class="nav-toggle-alt" href="#flow_content5">
+                                    <span class="entypo-up-open"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="body-nest" id="flow_content5" >
+                            <ul class="list-group" id="slider_sort_box" style="overflow-x: auto">
+                                <li class="list-group-item slider_sort_item" style="height: 55px;line-height: 30px" data-sid="1">
+                                    <span>1.序列排序</span>
+                                    <dl class="pull-right slider_btnBox">
+                                        <dd class="pull-right"><a href="javascript:void(0)" class="btn btn-sm btn-danger del_btn">删除</a></dd>
+                                        <dt class="pull-right" style="margin-right: 8px"><a href="{{url('admin/webAdminDetailsSlider')}}" class="btn btn-sm btn-success edit_btn">详情</a></dt>
+                                    </dl>
+                                </li>
+                                <li class="list-group-item slider_sort_item" style="height: 55px;line-height: 30px" data-sid="2">
+                                    <span>2.序列排序</span>
+                                    <dl class="pull-right slider_btnBox">
+                                        <dd class="pull-right"><a href="javascript:void(0)" class="btn btn-sm btn-danger del_btn">删除</a></dd>
+                                        <dt class="pull-right" style="margin-right: 8px"><a href="{{url('admin/webAdminDetailsSlider')}}" class="btn btn-sm btn-success edit_btn">详情</a></dt>
+                                    </dl>
+                                </li>
+                                <li class="list-group-item slider_sort_item" style="height: 55px;line-height: 30px" data-sid="3">
+                                    <span>3.序列排序</span>
+                                    <dl class="pull-right slider_btnBox">
+                                        <dd class="pull-right"><a href="javascript:void(0)" class="btn btn-sm btn-danger del_btn">删除</a></dd>
+                                        <dt class="pull-right" style="margin-right: 8px"><a href="{{url('admin/webAdminDetailsSlider')}}" class="btn btn-sm btn-success edit_btn">详情</a></dt>
+                                    </dl>
+                                </li>
+                                <li class="list-group-item slider_sort_item" style="height: 55px;line-height: 30px" data-sid="4">
+                                    <span>4.序列排序</span>
+                                    <dl class="pull-right slider_btnBox">
+                                        <dd class="pull-right"><a href="javascript:void(0)" class="btn btn-sm btn-danger del_btn">删除</a></dd>
+                                        <dt class="pull-right" style="margin-right: 8px"><a href="{{url('admin/webAdminDetailsSlider')}}" class="btn btn-sm btn-success edit_btn">详情</a></dt>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {{--流布局--}}
+                <div class="col-sm-12">
+                    <div class="nest">
+                        <div class="title-alt">
+                            <h6>流布局，排序</h6>
                             <div class="titleClose">
                                 <a class="gone" href="#flow_content4">
                                     <span class="entypo-cancel"></span>
@@ -271,15 +323,8 @@
 </script>
 
 <script>
-    $('#cd-dropdown').dropdown( {
-        gutter : 5,
-        delay : 100,
-        random : true
-    } );
-
-
+    /*layui*/
     var lay_offset=['400px'];
-
     layui.use(['element', 'layer', 'flow', 'code', 'laytpl'], function(){
         var flow = layui.flow,
                 element = layui.element(),
@@ -376,6 +421,8 @@
         }
     }).find("img").css({width:"18px"});
 
+
+    /*流布局*/
     setTimeout(function(){
         // init Isotope
         var $container = $('#container').isotope({
@@ -385,19 +432,19 @@
                 category: '[data-category]', // value of attribute
                 weight: function( itemElem ) { // function
                     var weight = $( itemElem ).find('.weight').text();
-                    return parseFloat( weight.replace( /[\(\)]/g, '') );
+                    return parseFloat( weight);
                 }
             }
         });
-// filter items on button click
         $('#filters').on( 'click', 'button', function() {
+            /*筛选*/
             var filterValue = $(this).data('filter');
             if(filterValue){
                 console.log(filterValue);
                 $container.isotope({ filter : filterValue });
             }
 
-
+            /*排序*/
             var SortValue = $(this).data('sort');
             if(SortValue){
                 console.log(SortValue);
@@ -406,6 +453,7 @@
                 });
             }
 
+            /*布局*/
             var layoutModeValue = $(this).data("layout");
             if(layoutModeValue){
                 console.log(layoutModeValue);
@@ -415,6 +463,35 @@
             }
         });
     },1000)
+
+    /*拖拽排序*/
+    var sortList = $("#slider_sort_box"),
+            sortItem = sortList.find(".slider_sort_item"),
+            uploadArray=[];//排序后新数组
+
+    //排序初始化
+    Sortable.create(sortList[0], {
+        group: "words",
+        animation: 150,
+        //onAdd: function (evt){ console.log('onAdd.foo:', [evt.item, evt.from]); },
+        //onUpdate: function (evt){ console.log('onUpdate.foo:', [evt.item, evt.from]); },
+        //onRemove: function (evt){ console.log('onRemove.foo:', [evt.item, evt.from]); },
+        //onStart:function(evt){ console.log('onStart.foo:', [evt.item, evt.from]);},
+        //onSort:function(evt){ console.log('onStart.foo:', [evt.item, evt.from]);},
+        onEnd: function(evt){
+            //console.log(evt.from);
+            var newFormLists = $(evt.from).children();
+            //console.log(newFormLists);
+
+            newFormLists.each(function(i,v){
+                //console.log($(v).data("sid"));
+                uploadArray[i] = $(v).data("sid");
+            });
+
+            alert(uploadArray);
+            console.log(uploadArray);
+        }
+    });
 </script>
 
 
